@@ -1,6 +1,6 @@
 # BangaTokenizer
 
-The purpose of this project is to tokenize Bangla text for BanglaGPT model. This is a tokenizer was trained on large corpus (>16GB) of bangla text data.
+The purpose of this project is to tokenize Bangla text for BanglaGPT model. This tokenizer was trained on large corpus (>16GB) of bangla text data.
 
 ### Usage
 Install the tokenizer using
