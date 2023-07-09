@@ -15,18 +15,15 @@ project, if not Please visit https://github.com/BanglaGPT/bangla-tokenizer.
   
 """
 
-
 from tokenizers import ByteLevelBPETokenizer
 from glob import glob
 import os
-
 
 vocab_size=52_000
 min_frequency=5
 special_tokens = [
     '[SOT]', '[PAD]', '[EOT]', '[UNK]', '[MASK]','[CLS]', '[SEP]',
 ]
-
 
 files = glob('./Data/OSCAR_Processed/*')
 print(files)
@@ -42,6 +39,3 @@ tokenizer.train(
 if not os.path.exists('./out/tokenizer'):
     os.makedirs('./out/tokenizer')
 tokenizer.save_model("./out/tokenizer", "banglagpt")
-
-
-
