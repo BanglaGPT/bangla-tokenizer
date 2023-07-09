@@ -1,4 +1,6 @@
 tokenizers
-
-
+tqdm
+datasets
+glob2
+pandas
 
