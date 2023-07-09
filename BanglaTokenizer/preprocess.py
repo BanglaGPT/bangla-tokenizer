@@ -21,18 +21,18 @@ from tqdm.auto import tqdm
 from utils import clean_text, clean_text_bn
 
 dataset = load_dataset(
-    "oscar-corpus/OSCAR-2201",
+    "oscar-corpus/OSCAR-2301",
     use_auth_token=True,
     language="bn",    
-    streaming=True,       
+    streaming=False,       
     split="train"
 )
 
 if not os.path.exists('./Data/OSCAR_Processed'):
-    os.mkdir('./Data/OSCAR_Processed')
+    os.makedirs('./Data/OSCAR_Processed')
 
 
-N = 10000
+N = 50000
 count = 0
 text = ''
 for idx, d in tqdm(enumerate(dataset)):
