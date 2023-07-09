@@ -3,8 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-src/Data/*
-src/out/*
+BanglaTokenizer/Data/*
+build/*
+BanglaTokenizer.egg-info/*
+BanglaTokenizer/__pycache__
+
 
 # C extensions
 *.so

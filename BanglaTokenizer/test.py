@@ -14,43 +14,24 @@ You should have received a copy of the License along with 'bangla-tokenizer'
 project, if not Please visit https://github.com/BanglaGPT/bangla-tokenizer.
   
 """
-
-from tokenizers import ByteLevelBPETokenizer
+from BanglaTokenizer import Tokenizer
 import pandas as pd
+from utils import clean_text
 
 
-tokenizer = ByteLevelBPETokenizer(
-    './out/tokenizer/banglagpt-vocab.json',
-    './out/tokenizer/banglagpt-merges.txt'
-    )
+text = "কফি হাউসের সেই আড্ডাটা আজ আর নেই’ বলে  বাঙালির যে চিরন্তন হা-হুতাশ, সে সম্পর্কে আমরা কমবেশি সবাই ওয়াকিফহাল।"
+print("Cleaned: ", clean_text(text))
 
-
-
-
-text = "কফি হাউসের সেই আড্ডাটা আজ আর নেই’ বলে বাঙালির যে চিরন্তন হা-হুতাশ, সে সম্পর্কে আমরা কমবেশি সবাই ওয়াকিফহাল।"
+tokenizer = Tokenizer()
 tokz_text = tokenizer.encode(text)
-
-print(tokz_text.ids)
-
-
 for i in tokz_text.ids:
     print(tokenizer.decode([i]))
+print(tokz_text.ids)
 
-
-
-
+# Save all token to csv
 d = []
 for i in range(52000):
     token = tokenizer.decode([i])
     d.append({"Token ID": i, "Token": token})
-
 pd.DataFrame(d).to_csv('./out/tokens.csv', index=False)
-
-
-
-
-
-
-
-
 
